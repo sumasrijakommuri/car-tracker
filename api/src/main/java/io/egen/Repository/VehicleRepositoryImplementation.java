@@ -31,7 +31,16 @@ public class VehicleRepositoryImplementation implements VehicleRepository{
 
     public List<Vehicle> update(List<Vehicle> vehicles) {
         for(Vehicle v:vehicles) {
-            entityManager.merge(v);
+            Vehicle exists = entityManager.find(Vehicle.class, v.getVin());
+            if(exists == null)
+            {
+                entityManager.persist(v);
+            }
+            else
+            {
+                entityManager.merge(v);
+            }
+
         }
         return vehicles;
     }
