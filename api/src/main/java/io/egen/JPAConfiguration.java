@@ -28,7 +28,7 @@ public class JPAConfiguration {
         emf.setPackagesToScan("io.egen.Entity");
 
         Properties properties = new Properties();
-        properties.put("hibernate.hbm2ddl.auto","create");
+        properties.put("hibernate.hbm2ddl.auto","validate");
         properties.put("hibernate.show_sql","true");
         properties.put("hibernate.dialect","org.hibernate.dialect.MySQL57Dialect");
 

@@ -15,12 +15,13 @@ public class VehicleController {
     @Autowired
     VehicleService service;
 
-
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value = "/vehicles", produces = APPLICATION_JSON_UTF8_VALUE)
     public List<Vehicle> findAll(){
         return service.findAll();
     }
 
+    @CrossOrigin
     @RequestMapping(method = RequestMethod.GET,value = "/vehicles/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
     public Vehicle findOne(@PathVariable("id") String vehicleId){
         return service.findOne(vehicleId);

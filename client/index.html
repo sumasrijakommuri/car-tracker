@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="carTracker">
+<head>
+    <meta charset="UTF-8">
+    <title>Car-Tracker</title>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="custom-css/tables.css">
+    <link rel="stylesheet" href="custom-css/content.css">
+
+
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="carTracker-navbar">
+    <div class="container">
+
+        <a href="#" class="navbar-left"><img src="media/car-tracker.png" height="40" width="40" padding="3px"></a>
+            <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="#" class="navbar-brand">Car Tracker</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+
+            <ul class="nav navbar-nav">
+                <li><a href="#">Vehicles</a></li>
+                <li><a href="#">Alerts</a></li>
+                <li><a href="#">History Plots</a></li>
+                <li><a href="#">Geolocation</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!--- end Navbar--->
+
+
+<div ng-controller="VehicleController as vehicleVm">
+
+    <div class="container">
+        <section>
+            <div class="page-header" id="list">
+                <h1 class="success">List of Vehicles</h1>
+            </div>
+        </section>
+    </div>
+
+    <div align="center">
+        <div class="main-center">
+            <table class="table">
+
+                <tr>
+                    <th>VIN</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Max fuel volume</th>
+                    <th>Last Service Data</th>
+                </tr>
+
+                <tr ng-repeat="vehicle in vehicleVm.vehicles">
+                    <td>{{vehicle.vin}}</td>
+                    <td>{{vehicle.make}}</td>
+                    <td>{{vehicle.model}}</td>
+                    <td>{{vehicle.year}}</td>
+                    <td>{{vehicle.maxFuelVolume}}</td>
+                    <td>{{vehicle.lastServiceDate | date}}</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
+<script src="app.js"></script>
+<script src="vehicle_details/vehicle.controller.js"></script>
+<script src="vehicle_details/vehicle.service.js"></script>
+</body>
+</html>
