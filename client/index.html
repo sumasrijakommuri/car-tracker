@@ -9,6 +9,7 @@
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="custom-css/tables.css">
     <link rel="stylesheet" href="custom-css/content.css">
@@ -37,8 +38,9 @@
         <div class="collapse navbar-collapse" id="navbar-collapse">
 
             <ul class="nav navbar-nav">
-                <li><a href="#">Vehicles</a></li>
-                <li><a href="#">Alerts</a></li>
+                <li><a href="/vehicles">Vehicles</a></li>
+                <li><a href="/alertsnumber">AlertNumber</a></li>
+                <li><a href="/alerts/:id">AlertData</a></li>
                 <li><a href="#">History Plots</a></li>
                 <li><a href="#">Geolocation</a></li>
             </ul>
@@ -48,47 +50,17 @@
 </nav>
 <!--- end Navbar--->
 
+<div ng-view></div>
 
-<div ng-controller="VehicleController as vehicleVm">
 
-    <div class="container">
-        <section>
-            <div class="page-header" id="list">
-                <h1 class="success">List of Vehicles</h1>
-            </div>
-        </section>
-    </div>
 
-    <div align="center">
-        <div class="main-center">
-            <table class="table">
 
-                <tr>
-                    <th>VIN</th>
-                    <th>Make</th>
-                    <th>Model</th>
-                    <th>Year</th>
-                    <th>Max fuel volume</th>
-                    <th>Last Service Data</th>
-                </tr>
-
-                <tr ng-repeat="vehicle in vehicleVm.vehicles">
-                    <td>{{vehicle.vin}}</td>
-                    <td>{{vehicle.make}}</td>
-                    <td>{{vehicle.model}}</td>
-                    <td>{{vehicle.year}}</td>
-                    <td>{{vehicle.maxFuelVolume}}</td>
-                    <td>{{vehicle.lastServiceDate | date}}</td>
-                </tr>
-
-            </table>
-        </div>
-
-    </div>
-
-</div>
 <script src="app.js"></script>
 <script src="vehicle_details/vehicle.controller.js"></script>
 <script src="vehicle_details/vehicle.service.js"></script>
+<script src="vehicle_alerts/alertdata.controller.js"></script>
+<script src="vehicle_alerts/alertdata.service.js"></script>
+<script src="vehicle_alerts/alertdata.service.js"></script>
+<script src="vehicle_alerts/alertnumber.controller.js"></script>
 </body>
 </html>
