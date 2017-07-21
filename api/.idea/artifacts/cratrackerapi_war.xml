@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cratrackerapi:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="car-tracker-api-1.0.0.war">
+      <element id="artifact" artifact-name="cratrackerapi:war exploded" />
+    </root>
+  </artifact>
+</component>
