@@ -16,7 +16,7 @@
             .when('/vehicles',{
                 templateUrl: "vehicle_details/vehicle.template.html"
             })
-            .when('/alerts/:id', {
+            .when('/alerts', {
                 templateUrl: "vehicle_alerts/alertdata.template.html"
             })
             .when('/alertsnumber',{

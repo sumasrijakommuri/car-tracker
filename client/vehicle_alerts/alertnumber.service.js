@@ -1,9 +1,4 @@
-/**
- * Created by Srija on 7/20/2017.
- */
-/**
- * Created by Srija on 7/19/2017.
- */
+
 (function () {
     'use strict';
 
@@ -13,19 +8,38 @@
     AlertNumberService.$inject = ['$q','$http'];
 
     function AlertNumberService($q,$http) {
-        var self = this;
 
-        self.getAlertNumbers= function(){
+
+       function getAlertNumbers(){
 
             return $http.get('http://localhost:8088/api/alertnumbers')
                 .then(function (response){
+                    console.log(response);
                     return response;
 
                 }, function (error) {
                     return $q.reject(error);
                 });
 
-        };
+        }
+
+        function getAlertData(vinid) {
+
+            return $http.get('http://localhost:8088/api/vehiclealerts/'+vinid).then(function (response) {
+
+                    console.log(response);
+                    return response;
+                }, function (error) {
+                    return $q.reject(error);
+                });
+
+        }
+
+        return {
+            getAlertNumbers :  getAlertNumbers,
+            getAlertData : getAlertData
+        }
+
     }
 
 })();

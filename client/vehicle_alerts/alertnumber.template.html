@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>AlertNumber Template</h1>
-</body>
-</html>
+<div ng-controller="AlertNumberController as alertnumberVm">
+    <div class="container">
+        <section>
+            <div class="page-header" id="list">
+                <h1 class="success">Number of High Alerts</h1>
+            </div>
+        </section>
+    </div>
+
+
+    <div align="center">
+        <div class="main-center">
+            <table class="table">
+
+                <tr>
+                    <th>VIN</th>
+                    <th>Alerts</th>
+                </tr>
+
+                <tr ng-repeat="alert in alertnumberVm.alertnum">
+                    <td>{{alert[0]}}</td>
+                    <td>{{alert[1]}}</td>
+                </tr>
+
+        </div>
+    </div>
+
+
+</div>

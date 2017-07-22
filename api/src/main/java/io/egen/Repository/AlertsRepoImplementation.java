@@ -16,7 +16,7 @@ public class AlertsRepoImplementation implements AlertsRepository {
 
     public List<Object> getHighAlertCount() {
                 return entityManager.createQuery("select vin,count(*) from Alert " +
-                "where priority=\'High\' GROUP BY vin")
+                "where priority=\'High\' GROUP BY vin ORDER BY count(*) DESC")
                 .getResultList();
     }
 

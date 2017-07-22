@@ -1,10 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>AlertData Template</h1>
-</body>
-</html>
+<div ng-controller="AlertNumberController as alertnumVm">
+
+    <div class="container">
+        <section>
+            <div class="page-header" id="plot">
+                <h1 class="success">Alerts</h1>
+            </div>
+
+        </section>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+
+            <select class="form-control" ng-model="vinvalue" ng-change="getVinValue(vinvalue)">
+                <option ng-repeat="alert in alertnumVm.alertnum" value="alert[0]">{{alert[0]}}</option>
+            </select>
+
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+
+    <div align="center">
+        <div class="main-center">
+            <table class="table">
+
+                <tr>
+                    <th>Type</th>
+                    <th>Priority</th>
+                    <th>TimeStamp</th>
+                </tr>
+
+                <tr ng-repeat="alert in alertnumVm.alertList">
+                    <td>{{alert.type}}</td>
+                    <td>{{alert.priority}}</td>
+                    <td>{{alert.timestamp | date: 'medium'}}</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+</div>
