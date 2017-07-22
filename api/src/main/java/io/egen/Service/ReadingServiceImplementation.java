@@ -21,5 +21,9 @@ public class ReadingServiceImplementation implements ReadingsService{
         return repository.create(readings);
     }
 
+    public List<Readings> findAll(String vin, String signal) {
+        return repository.findAll(vin,signal);
+    }
+
 
 }

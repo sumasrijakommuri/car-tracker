@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
+import java.util.List;
 
 
 @Repository
@@ -81,6 +81,12 @@ public class ReadingRepositoryImplementation implements ReadingsRepository {
 
 
         return readings;
+    }
+
+    public List<Readings> findAll(String vin, String signal) {
+        return entityManager.createQuery("\n" +
+                "select timestamp,"+ signal+" from Readings where vin = \'"+vin+"\'Order BY timestamp").getResultList();
+
     }
 
 

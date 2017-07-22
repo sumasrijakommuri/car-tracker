@@ -3,19 +3,20 @@
     <div class="container">
         <section>
             <div class="page-header" id="plot">
-                <h1 class="success">Alerts</h1>
+                <h1 class="success">Alert List</h1>
             </div>
 
         </section>
     </div>
+
 
     <div class="row">
         <div class="col-sm-4">
         </div>
         <div class="col-sm-4">
 
-            <select class="form-control" ng-model="vinvalue" ng-change="getVinValue(vinvalue)">
-                <option ng-repeat="alert in alertnumVm.alertnum" value="alert[0]">{{alert[0]}}</option>
+            <select class="form-control btn-primary" ng-model="vinvalue" ng-click="check()">
+                <option ng-repeat="vehicle in alertnumVm.vehicles" value={{vehicle.vin}}>{{vehicle.vin}}</option>
             </select>
 
         </div>
@@ -28,12 +29,14 @@
             <table class="table">
 
                 <tr>
+                    <th>VIN</th>
                     <th>Type</th>
                     <th>Priority</th>
                     <th>TimeStamp</th>
                 </tr>
 
                 <tr ng-repeat="alert in alertnumVm.alertList">
+                    <td>{{alert.vin}}</td>
                     <td>{{alert.type}}</td>
                     <td>{{alert.priority}}</td>
                     <td>{{alert.timestamp | date: 'medium'}}</td>

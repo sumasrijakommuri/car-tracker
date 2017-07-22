@@ -23,5 +23,11 @@ public class ReadingsController {
         return service.create(readings);
     }
 
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, value = "/readings/{id}/{signal}", produces = APPLICATION_JSON_UTF8_VALUE)
+    public List<Readings> findAll(@PathVariable("id") String vin,@PathVariable("signal") String signal){
+        return service.findAll(vin,signal);
+    }
+
 
 }
