@@ -1,0 +1,49 @@
+<div ng-controller="AlertNumberController as alertnumVm">
+
+    <div class="container">
+        <section>
+            <div class="page-header" id="plot">
+                <h1 class="success">Alert List</h1>
+            </div>
+
+        </section>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+
+            <select class="form-control btn-primary" ng-model="vinvalue" ng-click="check()">
+                <option ng-repeat="vehicle in alertnumVm.vehicles" value={{vehicle.vin}}>{{vehicle.vin}}</option>
+            </select>
+
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+
+    <div align="center">
+        <div class="main-center">
+            <table class="table">
+
+                <tr>
+                    <th>VIN</th>
+                    <th>Type</th>
+                    <th>Priority</th>
+                    <th>TimeStamp</th>
+                </tr>
+
+                <tr ng-repeat="alert in alertnumVm.alertList">
+                    <td>{{alert.vin}}</td>
+                    <td>{{alert.type}}</td>
+                    <td>{{alert.priority}}</td>
+                    <td>{{alert.timestamp | date: 'medium'}}</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+</div>

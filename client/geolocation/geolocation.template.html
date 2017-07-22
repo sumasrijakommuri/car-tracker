@@ -1,0 +1,26 @@
+<div ng-controller="AlertNumberController as alertnumVm">
+
+    <div class="container">
+        <section>
+            <div class="page-header" id="plot">
+                <h1 class="success">GeoLocation of a Vehicle</h1>
+            </div>
+
+        </section>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+
+            <select class="form-control btn-primary" ng-model="vinvalue" ng-click="check()">
+                <option ng-repeat="vehicle in alertnumVm.vehicles" value={{vehicle.vin}}>{{vehicle.vin}}</option>
+            </select>
+
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+</div>

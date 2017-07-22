@@ -1,0 +1,31 @@
+.main-center{
+    margin-top: 30px;
+    margin: 0;
+    max-width: 80%;
+    padding: 40px 40px;
+
+}
+
+.form-control {
+    height: auto!important;
+    padding: 8px 12px !important;
+}
+
+body {
+    padding-top: 60px;
+}
+
+#carTracker-navbar
+{
+    font-size: 20px;
+}
+
+.navbar-brand
+{
+    font-size: 24px;
+}
+
+.form-control btn-primary
+{
+    background: #19495e;
+}

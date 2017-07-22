@@ -1,0 +1,45 @@
+<div ng-controller="HistoryPlotController as historyPlotVm">
+
+    <div class="container">
+        <section>
+            <div class="page-header" id="plot">
+                <h1 class="success">History Plot of a Vehicle</h1>
+            </div>
+
+        </section>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+
+            <h4>Select Vehicle:</h4>
+            <select class="form-control btn-primary" ng-model="vinvalue">
+                <option ng-repeat="vehicle in historyPlotVm.vehicles" value={{vehicle.vin}}>{{vehicle.vin}}</option>
+            </select>
+            <br>
+            <h4>Select Signal:</h4>
+            <select class="form-control btn-primary" ng-model="signal" value="Select Signal">
+                <option value="fuelVolume">Fuel Volume</option>
+                <option value="speed">Speed</option>
+                <option value="engineRpm">Engine RPM</option>
+            </select>
+            <br>
+            <div align="center">
+                <button class="btn btn-primary" type="button" ng-click="plot()">Plot</button>
+            </div>
+            <br>
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+
+    <div id="plotContainer" style="max-width: 80%; height: 400px; margin: 0 auto">
+
+    </div>
+
+
+
+</div>
