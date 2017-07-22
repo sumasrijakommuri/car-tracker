@@ -1,0 +1,40 @@
+
+
+<div ng-controller="VehicleController as vehicleVm">
+
+    <div class="container">
+        <section>
+            <div class="page-header" id="list">
+                <h1 class="success">List of Vehicles</h1>
+            </div>
+        </section>
+    </div>
+
+    <div align="center">
+        <div class="main-center">
+            <table class="table">
+
+                <tr>
+                    <th>VIN</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Max fuel volume</th>
+                    <th>Last Service Data</th>
+                </tr>
+
+                <tr ng-repeat="vehicle in vehicleVm.vehicles">
+                    <td>{{vehicle.vin}}</td>
+                    <td>{{vehicle.make}}</td>
+                    <td>{{vehicle.model}}</td>
+                    <td>{{vehicle.year}}</td>
+                    <td>{{vehicle.maxFuelVolume}}</td>
+                    <td>{{vehicle.lastServiceDate | date}}</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+</div>
