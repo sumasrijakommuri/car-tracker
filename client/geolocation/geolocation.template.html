@@ -1,0 +1,34 @@
+<div ng-controller="GeoLocationController as geoLocationVm">
+
+    <div class="container">
+        <section>
+            <div class="page-header" id="plot">
+                <h1 class="success">GeoLocation of a Vehicle</h1>
+            </div>
+
+        </section>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4">
+
+            <select class="form-control btn-primary" ng-model="vinvalue" ng-change="check()">
+                <option ng-repeat="vehicle in geoLocationVm.vehicles" value={{vehicle.vin}}>{{vehicle.vin}}</option>
+            </select>
+
+        </div>
+        <div class="col-sm-4">
+        </div>
+    </div>
+    <br>
+    <div align="center">
+        <div class="main-center">
+            <!--div ng-model="map" id="map" style="border: 2px solid #3872ac" ng-show="true">
+                <ui-gmap-google-map center="map.center" zoom="map.zoom"></ui-gmap-google-map>
+            </div-->
+        </div>
+    </div>
+</div>

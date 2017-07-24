@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="carTracker">
+<head>
+    <meta charset="UTF-8">
+    <title>Car-Tracker</title>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-ui/build/angular-ui.min.js"></script>
+    <script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRzSKEZE3aL_XPibviIF7TbELIqUjGWpo"
+            type="text/javascript"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="custom-css/tables.css">
+    <link rel="stylesheet" href="custom-css/content.css">
+
+
+</head>
+<body>
+
+<!-- navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top" id="carTracker-navbar">
+    <div class="container">
+
+        <a href="#" class="navbar-left"><img src="media/car-tracker.png" height="40" width="40" padding="3px"></a>
+            <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="#" class="navbar-brand">Car Tracker</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+
+            <ul class="nav navbar-nav">
+                <li><a href="#!/vehicles">Vehicles</a></li>
+                <li><a href="#!/alertsnumber">AlertNumber</a></li>
+                <li><a href="#!/alerts">AlertData</a></li>
+                <li><a href="#!/historyplots">History Plots</a></li>
+                <li><a href="#!/geolocation">Geolocation</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<!--- end Navbar--->
+
+<div ng-view></div>
+
+
+
+
+<script src="app.js"></script>
+<script src="vehicle_details/vehicle.controller.js"></script>
+<script src="vehicle_details/vehicle.service.js"></script>
+<script src="vehicle_alerts/alertnumber.controller.js"></script>
+<script src="vehicle_alerts/alertnumber.service.js"></script>
+<script src="history_plots/historyplot.controller.js"></script>
+<script src="history_plots/historyplot.service.js"></script>
+<script src="geolocation/geolocation.controller.js"></script>
+<script src="geolocation/geolocation.service.js"></script>
+</body>
+</html>
