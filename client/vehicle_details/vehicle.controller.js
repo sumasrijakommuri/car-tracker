@@ -12,12 +12,12 @@
     function VehicleController(VehicleService) {
         var vehicleVm = this;
 
-      VehicleService.getVehicles()
-          .then(function (response) {
-              vehicleVm.vehicles = response.data;
-              console.log(response.data);
-          }, function (error) {
-              console.log(error);
-          });
+        VehicleService.getVehicles()
+            .then(function (response) {
+                vehicleVm.vehicles = response.data;
+                console.log(response.data);
+            }, function (error) {
+                console.log(error);
+            });
     }
 })();

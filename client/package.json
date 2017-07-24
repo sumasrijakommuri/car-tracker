@@ -1,13 +1,11 @@
 {
   "name": "car-tracker",
   "version": "1.0.0",
-  "description": "Client side programming for car-tracker project",
+  "description": "",
   "main": "index.html",
   "scripts": {
-    "init": "npm install",
-    "install": "bower install",
-    "start": "node ./app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Suma Srija Kommuri",
+  "author": "",
   "license": "ISC"
 }

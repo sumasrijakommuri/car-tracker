@@ -25,5 +25,9 @@ public class ReadingServiceImplementation implements ReadingsService{
         return repository.findAll(vin,signal);
     }
 
+    public List<Object> getLocation(String id) {
+        return repository.getLocation(id);
+    }
+
 
 }

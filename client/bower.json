@@ -1,9 +1,9 @@
 {
   "name": "car-tracker",
-  "description": "Client side programming for car-tracker project",
+  "description": "",
   "main": "index.html",
   "authors": [
-    "Suma Srija Kommuri"
+    "sumasrijakommuri <sumasrija@gmail.com>"
   ],
   "license": "ISC",
   "homepage": "https://github.com/sumasrijakommuri/car-tracker",
@@ -17,10 +17,10 @@
   ],
   "dependencies": {
     "angular": "^1.6.5",
+    "angular-route": "^1.6.5",
     "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
-    "angular-animate": "^1.6.5",
-    "angular-ui-router": "^1.0.5",
-    "angular-route": "^1.6.5"
+    "angular-ui": "^0.4.0",
+    "angular-google-maps": "^2.4.1"
   }
 }

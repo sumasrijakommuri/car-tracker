@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module('carTracker', ['ngRoute']);
+    angular.module('carTracker', ['ngRoute','uiGmapgoogle-maps']);
 
     angular.module('carTracker')
         .config(moduleConfig);

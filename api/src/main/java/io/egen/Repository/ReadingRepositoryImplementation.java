@@ -89,5 +89,9 @@ public class ReadingRepositoryImplementation implements ReadingsRepository {
 
     }
 
+    public List<Object> getLocation(String vin) {
+        return entityManager.createQuery("select latitude,longitude from Readings where vin= \'"+vin+"\' order by timestamp asc").getResultList();
+    }
+
 
 }

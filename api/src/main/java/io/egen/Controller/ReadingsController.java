@@ -29,5 +29,12 @@ public class ReadingsController {
         return service.findAll(vin,signal);
     }
 
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.GET, value="/readings/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
+    public List<Object> getLocation(@PathVariable("id") String vin)
+    {
+        return service.getLocation(vin);
+    }
+
 
 }
