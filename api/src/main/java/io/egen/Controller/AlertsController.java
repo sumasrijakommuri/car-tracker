@@ -22,6 +22,8 @@ public class AlertsController {
         return service.getHighAlertCount();
     }
 
+    //Testing git
+    
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET, value="/vehiclealerts/{id}", produces = APPLICATION_JSON_UTF8_VALUE)
     public List<Alert> getVehicleAlerts(@PathVariable("id") String vehicleId){
